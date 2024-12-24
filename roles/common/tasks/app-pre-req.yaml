@@ -6,7 +6,10 @@
 
 - name: Create app directory 
   ansible.builtin.file:    
-    path: /app
+    path:
+  loop: 
+  - /app
+  - /use/share/nginx/html
     state: directory 
 
 - name: "download the {{ component }} code"
