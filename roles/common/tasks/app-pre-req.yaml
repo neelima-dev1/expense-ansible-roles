@@ -8,13 +8,20 @@
   ansible.builtin.file:    
     path: /app
     state: directory 
-- name: create html directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory       
 
 - name: "download the {{ component }} code"
   ansible.builtin.unarchive:
     src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
     dest: "{{ app_location }}"
+    remote_src: yes
+
+- name: create html directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory       
+
+- name: "download the {{ component1 }} code"
+  ansible.builtin.unarchive:
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component1 }}-v2.zip"
+    dest: "{{ app_location1 }}"
     remote_src: yes

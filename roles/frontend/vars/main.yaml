@@ -1,3 +1,3 @@
 BACKEND_HOST: backend.neelima.online
-app_location: /etc/nginx/default.d/expense.conf
-component: frontend
+app_location1: /usr/share/nginx/html
+component1: frontend
