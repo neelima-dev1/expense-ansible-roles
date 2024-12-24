@@ -20,8 +20,8 @@
     path: /usr/share/nginx/html
     state: directory       
 
-- name: "download the {{ component1 }} code"
+- name: "download the {{ component }} code"
   ansible.builtin.unarchive:
-    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component1 }}-v2.zip"
-    dest: "{{ app_location1 }}"
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+    dest: "{{ app_location }}"
     remote_src: yes
