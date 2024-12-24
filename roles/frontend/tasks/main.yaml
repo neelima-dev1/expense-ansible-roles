@@ -14,8 +14,8 @@
   - name: create html directory
     ansible.builtin.file:
       path: /usr/share/nginx/html
-      state: director
-          
+      state: directory
+
   - name: import tasks from common role
     ansible.builtin.import_role:
       name: common
